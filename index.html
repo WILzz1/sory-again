@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maafin Aku Ya... ❤️</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Sacramento&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      /* Background Hitam / Gelap Elegan */
+      background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card-container {
+      /* Kartu dengan background abu-abu gelap semi-transparan */
+      background: rgba(30, 30, 30, 0.95);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      width: 100%;
+      max-width: 450px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* CSS Swap Halaman */
+    .page {
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease-in-out;
+      width: 100%;
+    }
+
+    .page.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .emoji {
+      font-size: 60px;
+      margin-bottom: 15px;
+      animation: bounce 2s infinite;
+    }
+
+    h1 {
+      /* Warna teks judul agak pink lembut / putih agar kontras di gelap */
+      color: #ff758c;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .font-romantic {
+      font-family: 'Sacramento', cursive;
+      font-size: 2.5rem;
+      color: #ff758c;
+    }
+
+    p {
+      /* Teks paragraf abu-abu terang */
+      color: #b0b0b0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    /* Styling Tombol */
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-primary {
+      background: #ff4b2b;
+      color: white;
+    }
+
+    .btn-secondary {
+      background: #444;
+      color: #ffffff;
+      border: 1px solid #666;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #b0b0b0;
+      border: 2px solid #555;
+    }
+
+    .btn-danger {
+      background: #5a1818;
+      color: #ff9999;
+      border: 1px solid #8c2828;
+      position: relative;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-container">
+
+    <!-- Halaman 1 -->
+    <div class="page active" id="page-1">
+      <div class="emoji">☺️</div>
+      <h1>Aku Minta Maaf Ya...</h1>
+      <p>
+       Aku salah, maaf respon aku ga baik, malah bikin mood kamu buruk sory yang
+        Gak ada niat sedikit pun dari aku buat bikin kamu badmood.Sory yang
+      </p>
+      <div class="button-group">
+        <button class="btn btn-secondary" onclick="nextPage(2)">Lanjut Baca 👉</button>
+      </div>
+    </div>
+
+    <!-- Halaman 2 -->
+    <div class="page" id="page-2">
+      <div class="emoji">💔</div>
+      <h1>Sory</h1>
+      <p>
+       maaf respon aku kurang baik aku udah berusaha semaksimal mungkin untuk minta maaf dan menghibur kamu.
+       Maaf ya yang, Aku cuman bikin kesel sama bad mood kamu doang.Tapi aku udah berusaha semaksimal aku, biar kamu bisa ceria lagi , jujur aku bingung harus gimana jadi aku minta maaf.Mau kamu bilang aku cowo bingung juga gpp yang☺️.
+       Jujur aku juga lagi pusing yang belum juga ada tugas so sory ya yang.
+       .Aku tau kamu lagi cape kerja, belum hal lain juga, aku minta maaf yang ☺️:) sory
+      </p>
+      <div class="button-group">
+        <button class="btn btn-outline" onclick="nextPage(1)">👈 Kembali</button>
+        <button class="btn btn-secondary" onclick="nextPage(3)">Ada Lanjutannya 👉</button>
+      </div>
+    </div>
+
+    <!-- Halaman 3 -->
+    <div class="page" id="page-3">
+      <div class="emoji">🌹</div>
+      <h1>Kamu Masih Marah Gak?</h1>
+      <p>Bisa dimaafin gak nih orang yang sayang banget sama kamu ini?</p>
+      <div class="button-group">
+        <button class="btn btn-primary" onclick="nextPage(4)">Udah Maafin 🥰</button>
+        <button class="btn btn-danger" id="btn-no" onmouseover="moveButton()" onclick="moveButton()">Masih Marah 😡</button>
+      </div>
+    </div>
+
+    <!-- Halaman 4 (Selesai) -->
+    <div class="page" id="page-4">
+      <div class="emoji">💖</div>
+      <h1 class="font-romantic">Makasih Banyak, Sayang!</h1>
+      <p>
+        Makasih udah mau maafin aku! Nanti kita jalan-jalan atau beli makanan kesukaan kamu yaa! 🥰❤️
+      </p>
+      <div class="button-group">
+        <button class="btn btn-secondary" onclick="nextPage(1)">🔄 Baca Dari Awal</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // JS Fungsi Swap Halaman
+    function nextPage(pageNumber) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        page.classList.remove('active');
+      });
+
+      setTimeout(() => {
+        const targetPage = document.getElementById(`page-${pageNumber}`);
+        if (targetPage) {
+          targetPage.classList.add('active');
+        }
+      }, 50);
+    }
+
+    // JS Fitur Tombol "Masih Marah" Kabur
+    function moveButton() {
+      const btnNo = document.getElementById('btn-no');
+      if (!btnNo) return;
+
+      const card = document.querySelector('.card-container');
+      const maxX = card.clientWidth - btnNo.clientWidth - 40;
+      const maxY = card.clientHeight - btnNo.clientHeight - 40;
+
+      const randomX = Math.floor(Math.random() * maxX) - (maxX / 2);
+      const randomY = Math.floor(Math.random() * maxY) - (maxY / 2);
+
+      btnNo.style.position = 'relative';
+      btnNo.style.left = `${randomX}px`;
+      btnNo.style.top = `${randomY}px`;
+    }
+  </script>
+</body>
+</html>
